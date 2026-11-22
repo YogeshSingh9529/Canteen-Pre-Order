@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QuickBite – Canteen Pre-Order & Pickup Queue</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1><span class="emoji">🍔</span> QuickBite Canteen</h1><p>Pre-order your food, skip the line, pick up when ready</p></header>
+<nav id="nav"></nav>
+<main>
+<section id="menu"><div class="bar"><input id="q" class="grow" placeholder="🔍 Search food..."><select id="sort"><option value="">Sort: Default</option><option value="p">Price: Low to High</option><option value="n">Name A–Z</option></select></div>
+<div class="bar" id="chips"></div><div class="grid" id="items"></div></section>
+
+<section id="cart"><div class="panel"><h2>🛒 Your Cart</h2><div id="cl"></div>
+<div class="form" style="margin-top:14px"><div><label>Student name</label><input id="nm" placeholder="e.g. Rahul Sharma"></div><div><label>Roll / ID number</label><input id="rl" placeholder="e.g. 24CS101"></div><div><label>Pickup slot</label><select id="sl"></select></div></div>
+<div class="err" id="ce"></div><div class="row"><b id="tot"></b><button class="btn" id="place">Place Order →</button></div></div></section>
+
+<section id="queue"><div class="hint">💡 <b>Kaise kaam karta hai:</b> Student order karta hai → canteen staff neeche ke button se status aage badhata hai (Cooking → Ready → Handed Over) → <b>Ready</b> wale token upar "Now Serving" mein dikhte hain.</div><div class="panel serve"><h2>📢 Now Serving</h2><div id="ns"></div></div><div class="bar"><input id="tq" class="grow" placeholder="🔍 Search by token, name or roll no."><select id="sf"><option value="">All status</option><option>Placed</option><option>Preparing</option><option>Ready</option><option>Picked</option></select></div><div class="board" id="ql"></div></section>
+
+<section id="admin"><div class="hint">🛠️ <b>Admin Panel:</b> Yahan canteen owner menu manage karta hai. Left mein naya item add/update karo, right mein stock <b>+ / −</b> se badlo. Orders ka status <b>Queue</b> tab se badalta hai.</div><div class="stats" id="as2"></div><div class="adm"><div class="panel formp"><h2 id="ft">➕ Add Menu Item</h2><div class="form">
+<div><label>Item name</label><input id="an"></div><div><label>Category</label><select id="ac"><option>Meals</option><option>Snacks</option><option>Drinks</option><option>Desserts</option></select></div>
+<div><label>Price (₹)</label><input id="ap" type="number" min="1"></div><div><label>Stock</label><input id="as" type="number" min="0"></div><div><label>Emoji</label><input id="ae" maxlength="2" placeholder="🍕"></div></div>
+<div class="err" id="ae2"></div><button class="btn alt" id="save">Save Item</button> <button class="btn" id="cancel" style="display:none;background:var(--mut)">Cancel</button></div>
+<div class="panel" id="al"></div></div></section>
+
+<section id="dash"><div class="stats" id="st"></div><div class="panel"><h2>📊 Orders by status</h2><div class="bars" id="b1"></div></div><div class="panel"><h2>🔥 Top selling items</h2><div class="bars" id="b2"></div></div></section>
+</main><div id="toast"></div>
+<script src="script.js"></script></body></html>
